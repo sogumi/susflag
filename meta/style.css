@@ -176,15 +176,15 @@ h1 {
 
 .russia {
   transition: width 2s, height 2s, background-color 2s, transform 2s;
-  transform: scaleX(1);;
+  transform: scaleX(1);
 }
 
 .russia:hover {
   transform: scaleX(0);
 }
 
-h1::before {  
-  content: '';
+h1::before {
+  content: "";
   top: 0;
   left: 0;
   bottom: 0;
@@ -205,14 +205,16 @@ h1 {
   transition: color 300ms ease-in-out;
 }
 
-
-/* 
-
- h1:hover,
+h1:hover,
 h1:focus,
 h1:nth-child(1):hover {
   transition: transform 300ms ease-in-out;
   color: var(--background-color);
-  visibility: visible;
-  
-}  */
+}
+
+/* h1:hover,
+h1:focus,
+h1:nth-child(1):hover {
+  transition: transform 300ms ease-in-out;
+  color: var(--background-color);
+  visibility: visible; */
