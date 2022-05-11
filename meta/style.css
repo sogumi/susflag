@@ -1,3 +1,4 @@
+/* Initial css */
 * {
   box-sizing: border-box;
   font-family: "RealFont-bold", "Open-sans", sans-serif;
@@ -5,21 +6,29 @@
 
 @font-face {
   font-family: RealFont;
-  src: url(./assets/fonts/EncodeSans-VariableFont_wdth\,wght.ttf);
+  src: url(./assets/fonts/EncodeSans-VariableFont_wdth\wght.ttf);
+}
+
+:root {
+  --flag-default-width: 300px;
+  --flag-default-height: 200px;
+  --background-color: #212f3d;
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 h1 {
   color: antiquewhite;
   display: flex;
   justify-content: center;
-  font-size: 50px;
+  font-size: 3rem;
 }
 
-body {
-  background-color: #212f3d;
-}
+/* Universal properties */
 
-#container {
+.container {
   display: flex;
   justify-content: center;
   position: relative;
@@ -28,8 +37,37 @@ body {
 .flag {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 200px;
+  width: var(--flag-default-width);
+  height: var(--flag-default-height);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Russian flag */
+
+.stripe {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.blue {
+  background-color: #0038a4;
+}
+
+.red {
+  background-color: #d52a1d;
+}
+
+/* Nazi Swastika */
+
+.container > .nazi {
+  margin-top: -200px;
+  z-index: -1;
 }
 
 .nazismo {
@@ -41,110 +79,140 @@ body {
 }
 
 .circle {
-  position: relative;
   display: flex;
-  z-index: 100;
+  position: relative;
   background-color: #000;
   height: 154px;
   width: 154px;
   border-radius: 100px;
-    overflow: hidden;
+  overflow: hidden;
+}
+
+.circle span {
+  position: absolute;
 }
 
 .overflow1 {
-    position: absolute;
-    bottom: 41px;
-    right: 120px;
-    background-color: #fff;
-    height: 150px;
-    width: 50px;
-    transform: rotate(45deg);
-
+  bottom: 41px;
+  right: 120px;
+  background-color: #fff;
+  height: 150px;
+  width: 50px;
+  transform: rotate(45deg);
 }
 
 .overflow2 {
-    position: absolute;
-    bottom: 41px;
-    left: 120px;
-    background-color: #fff;
-    height: 150px;
-    width: 50px;
-    transform: rotate(135deg);
+  bottom: 41px;
+  left: 120px;
+  background-color: #fff;
+  height: 150px;
+  width: 50px;
+  transform: rotate(135deg);
 }
 
 .overflow3 {
-    position: absolute;
-    left: 120px;
-    top: 41px;
-    background-color: #fff;
-    height: 150px;
-    width: 50px;
-    transform: rotate(45deg);
-
+  top: 41px;
+  left: 120px;
+  background-color: #fff;
+  height: 150px;
+  width: 50px;
+  transform: rotate(45deg);
 }
 
 .overflow4 {
-    position: absolute;
-    background-color: #fff;
-    height: 150px;
-    width: 50px;
-    transform: rotate(135deg);
-    top: 41px;
-    right: 120px;
+  top: 41px;
+  right: 120px;
+  background-color: #fff;
+  height: 150px;
+  width: 50px;
+  transform: rotate(135deg);
 }
 
-#innerContainer {
-    display: flex;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.innerContainer {
+  display: flex;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Good */
+.innerContainer span {
+  position: absolute;
+  width: 20px;
+  height: 60px;
+}
+
 .innerOverflow1 {
-    background-color: #fff;
-    position: absolute;
-    width: 20px;
-    height: 60px;
-    z-index: 100;
-    transform: rotate(45deg);
-    bottom: 3px;
-    right: 83px;
+  background-color: #fff;
+  bottom: 3px;
+  right: 83px;
+  transform: rotate(45deg);
 }
 
 .innerOverflow2 {
-    background-color: #fff;
-    position: absolute;
-    width: 20px;
-    height: 60px;
-    z-index: 100;
-    transform: rotate(135deg);
-    top: 33px;
-    right: 108px;
+  background-color: #fff;
+  top: 33px;
+  right: 108px;
+  transform: rotate(135deg);
 }
 
-/* Good */
 .innerOverflow3 {
-    background-color: #fff;
-    position: absolute;
-    width: 20px;
-    height: 60px;
-    z-index: 100;
-    transform: rotate(45deg);
-    top: 6px;
-    left: 79px;
+  background-color: #fff;
+  top: 6px;
+  left: 79px;
+  transform: rotate(45deg);
 }
 
 .innerOverflow4 {
-    background-color: #fff;
-    position: absolute;
-    width: 20px;
-    height: 60px;
-    z-index: 100;
-    transform: rotate(135deg);
-    bottom: 32px;
-    left: 108px;
+  background-color: #fff;
+  bottom: 32px;
+  left: 108px;
+  transform: rotate(135deg);
 }
+
+/* animations */
+
+.russia {
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  transform: scaleX(1);;
+}
+
+.russia:hover {
+  transform: scaleX(0);
+}
+
+h1::before {  
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-color: antiquewhite;
+  transition: transform 250ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+h1:hover::before {
+  transform: scaleX(1);
+}
+
+h1 {
+  transition: color 300ms ease-in-out;
+}
+
+
+/* 
+
+ h1:hover,
+h1:focus,
+h1:nth-child(1):hover {
+  transition: transform 300ms ease-in-out;
+  color: var(--background-color);
+  visibility: visible;
+  
+}  */
