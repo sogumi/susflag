@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  font-family: "RealFont-bold", "Open-sans", sans-serif;
+}
+
+@font-face {
+  font-family: RealFont;
+  src: url(./assets/fonts/EncodeSans-VariableFont_wdth\,wght.ttf);
+}
+
+h1 {
+  color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+
+body {
+  background-color: #212f3d;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.flag {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+}
+
+.nazismo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  flex-grow: 1;
+}
+
+.circle {
+  position: relative;
+  display: flex;
+  z-index: 100;
+  background-color: #000;
+  height: 154px;
+  width: 154px;
+  border-radius: 100px;
+    overflow: hidden;
+}
+
+.overflow1 {
+    position: absolute;
+    bottom: 41px;
+    right: 120px;
+    background-color: #fff;
+    height: 150px;
+    width: 50px;
+    transform: rotate(45deg);
+
+}
+
+.overflow2 {
+    position: absolute;
+    bottom: 41px;
+    left: 120px;
+    background-color: #fff;
+    height: 150px;
+    width: 50px;
+    transform: rotate(135deg);
+}
+
+.overflow3 {
+    position: absolute;
+    left: 120px;
+    top: 41px;
+    background-color: #fff;
+    height: 150px;
+    width: 50px;
+    transform: rotate(45deg);
+
+}
+
+.overflow4 {
+    position: absolute;
+    top: 41px;
+    right: 120px;
+    background-color: #fff;
+    height: 150px;
+    width: 50px;
+    transform: rotate(135deg);
+}
+
+#innerContainer {
+    display: flex;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerOverflow1 {
+    background-color: #fff;
+    position: absolute;
+    width: 17px;
+    height: 60px;
+    z-index: 100;
+    transform: rotate(45deg);
+    bottom: 0;
+    right: 85px;
+}
+
+.innerOverflow2 {
+    background-color: #fff;
+    position: absolute;
+    width: 17px;
+    height: 60px;
+    z-index: 100;
+    transform: rotate(135deg);
+    top: 29px;
+    right: 114px;
+}
+
+.innerOverflow3 {
+    background-color: #fff;
+    position: absolute;
+    width: 17px;
+    height: 60px;
+    z-index: 100;
+    transform: rotate(45deg);
+    top: 0;
+    left: 85px;
+}
+
+.innerOverflow4 {
+    background-color: #fff;
+    position: absolute;
+    width: 17px;
+    height: 60px;
+    z-index: 100;
+    transform: rotate(135deg);
+    bottom: 29px;
+    left: 114px;
+}
