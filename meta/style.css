@@ -26,12 +26,6 @@ h1 {
   font-size: 3rem;
 }
 
-button {
-  margin-top: 15px;
-  background-color: antiquewhite;
-  border: 1px solid #555;
-}
-
 /* Universal properties */
 
 .container {
@@ -189,33 +183,35 @@ button {
   transform: scaleX(0);
 }
 
-.btn.btn-animation::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  transform: scaleX(0);
-  transition: transform 300ms ease-in-out;
-  transform-origin: left;
+/* Button */
+
+.btns {
+
+  display: flex;
+  margin: 100px;
 }
 
-.btn.btn-animation:hover::before,
-.btn.btn-animation:focus::before {
-  transform: scaleX(1);
+.btn-1 {
+  width: 120px;
+  height: 40px;
+  border: none;
+  color: #000;
+  /* background-color: rgb(255,0 , 69); */
+  background-color: antiquewhite;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #0038a4;
+  transition: ease-out 0.4s;
+  font-size: 20px;
+  
 }
 
-.btn.btn-animation {
-  transition: color 300ms ease-in-out;
-  z-index: 1;
+.btn-1:hover {
+  box-shadow: inset 120px 0 0 0 #42FBF2;
+  cursor: pointer;
+  color: #000;
 }
 
-.btn.btn-animation:hover,
-.btn.btn-animation:focus {
-  color: white;
-}
+/* H1 animations */
 
 h1::before {
   content: "";
@@ -224,7 +220,6 @@ h1::before {
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;
   background-color: antiquewhite;
   transition: transform 250ms ease-in-out;
   transform: scaleX(0);
@@ -232,18 +227,32 @@ h1::before {
 }
 
 h1:hover::before,
-h1:focus::before {
+h1:focus::before{
   background-color: antiquewhite;
   transform: scaleX(1);
+
 }
 
 h1 {
   transition: color 300ms ease-in-out;
 }
 
+/* Saved */
+
 h1:hover,
+h1:focus {
+  z-index: 2;
+  transition: transform 300ms ease-in-out;
+  color: var(--background-color);
+}
+
+/* h1:hover,
 h1:focus,
 h1:nth-child(1):hover {
   transition: transform 300ms ease-in-out;
   color: var(--background-color);
-}
+} */
+
+/* Button animations */
+
+/* TODO FIX THE BUTTON */
